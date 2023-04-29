@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="toolbarListeBaslik"
+            type="String" />
+        <variable
+            name="yemekListFragemnt"
+            type="com.acikgoz.menuapp.ui.view.ListeFragment" />
+        <variable
+            name="yemekAdapter"
+            type="com.acikgoz.menuapp.ui.adapter.YemekAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.view.ListeFragment"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarListe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewListe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{toolbarListeBaslik}" >
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageButton
+             android:id="@+id/imageSepetButton"
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:background="@drawable/sepetim"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="@+id/toolbarListe">
+
+
+         </ImageButton>
+
+         <androidx.recyclerview.widget.RecyclerView
+
+             android:id="@+id/recyclerViewListe"
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:adapter="@{yemekAdapter}"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.0"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/toolbarListe"
+             app:layout_constraintVertical_bias="1.0" />
+
+
+     </androidx.constraintlayout.widget.ConstraintLayout>
+ </layout>

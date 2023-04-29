@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/listeFragment">
+
+    <fragment
+        android:id="@+id/listeFragment"
+        android:name="com.acikgoz.menuapp.ui.view.ListeFragment"
+        android:label="fragment_liste"
+        tools:layout="@layout/fragment_liste" >
+        <action
+            android:id="@+id/detayaGecis"
+            app:destination="@id/detayFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/listedenSepeteGecis"
+            app:destination="@id/sepetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detayFragment"
+        android:name="com.acikgoz.menuapp.ui.view.DetayFragment"
+        android:label="fragment_detay"
+        tools:layout="@layout/fragment_detay" >
+        <action
+            android:id="@+id/sepeteGecis"
+            app:destination="@id/sepetFragment"
+            app:enterAnim="@anim/nav_default_exit_anim" />
+        <argument
+            android:name="yemek"
+            app:argType="com.acikgoz.menuapp.data.entitiy.Yemekler" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.acikgoz.menuapp.ui.view.SepetFragment"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" >
+        <action
+            android:id="@+id/siparisGecis"
+            app:destination="@id/siparisSepetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/siparisSepetFragment"
+        android:name="com.acikgoz.menuapp.ui.view.SiparisSepetFragment"
+        android:label="fragment_siparis_sepet"
+        tools:layout="@layout/fragment_siparis_sepet" >
+        <action
+            android:id="@+id/siparistenLiseteyeGecis"
+            app:destination="@id/listeFragment" />
+    </fragment>
+</navigation>

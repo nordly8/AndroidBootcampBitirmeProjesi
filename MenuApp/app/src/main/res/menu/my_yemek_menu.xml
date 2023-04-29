@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/arama_resmi"
+        android:icon="@drawable/arama_resim"
+        app:showAsAction="always|collapseActionView"
+        android:title="Ara"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+    <item
+        android:id="@+id/sepetim"
+        android:icon="@drawable/sepetim"
+        app:showAsAction="always|collapseActionView"
+        android:title="Sepetim" />
+
+
+
+</menu>
